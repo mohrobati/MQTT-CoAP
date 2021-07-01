@@ -27,9 +27,9 @@ class HomePublisher(Publisher):
             homes = self._assignValues()
             for i in range(len(homes)):
                 home = homes[i]
-                client.publish(path + str(i) + "/parking", str(home.parking), qos = 1)
-                client.publish(path + str(i) + "/lights", str(home.lights), qos = 1)
-                client.publish(path + str(i) + "/doorlock", str(home.doorlock), qos = 1)
-                client.publish(path + str(i) + "/temperature", str(home.temperature), qos = 1)
-                client.publish(path + str(i) + "/energy", str(home.energy), qos = 1)
+                client.publish(path + str(i) + "/parking", str(home.parking), qos = 1, retain=True)
+                client.publish(path + str(i) + "/lights", str(home.lights), qos = 1, retain=True)
+                client.publish(path + str(i) + "/doorlock", str(home.doorlock), qos = 1, retain=True)
+                client.publish(path + str(i) + "/temperature", str(home.temperature), qos = 1, retain=True)
+                client.publish(path + str(i) + "/energy", str(home.energy), qos = 1, retain=True)
             time.sleep(1000)

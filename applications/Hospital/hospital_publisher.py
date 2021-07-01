@@ -27,9 +27,9 @@ class HospitalPublisher(Publisher):
             hospitals = self._assignValues()
             for i in range(len(hospitals)):
                 hospital = hospitals[i]
-                client.publish(path + str(i) + "/bloodPressure", str(hospital.bloodPressure), qos = 2)
-                client.publish(path + str(i) + "/fever", str(hospital.fever), qos = 2)
-                client.publish(path + str(i) + "/heartbeat", str(hospital.heartbeat), qos = 2)
-                client.publish(path + str(i) + "/oxygen", str(hospital.oxygen), qos = 2)
-                client.publish(path + str(i) + "/energy", str(hospital.energy), qos = 2)
+                client.publish(path + str(i) + "/bloodPressure", str(hospital.bloodPressure), qos = 2, retain=True)
+                client.publish(path + str(i) + "/fever", str(hospital.fever), qos = 2, retain=True)
+                client.publish(path + str(i) + "/heartbeat", str(hospital.heartbeat), qos = 2, retain=True)
+                client.publish(path + str(i) + "/oxygen", str(hospital.oxygen), qos = 2, retain=True)
+                client.publish(path + str(i) + "/energy", str(hospital.energy), qos = 2, retain=True)
             time.sleep(30)

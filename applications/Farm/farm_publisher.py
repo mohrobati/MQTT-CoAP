@@ -27,9 +27,9 @@ class FarmPublisher(Publisher):
             farms = self._assignValues()
             for i in range(len(farms)):
                 farm = farms[i]
-                client.publish(path + str(i) + "/humidity", str(farm.humidity), qos = 1)
-                client.publish(path + str(i) + "/light", str(farm.light), qos = 1)
-                client.publish(path + str(i) + "/moisture", str(farm.moisture), qos = 1)
-                client.publish(path + str(i) + "/temperature", str(farm.temperature), qos = 1)
-                client.publish(path + str(i) + "/energy", str(farm.energy), qos = 1)
+                client.publish(path + str(i) + "/humidity", str(farm.humidity), qos = 1, retain=True)
+                client.publish(path + str(i) + "/light", str(farm.light), qos = 1, retain=True)
+                client.publish(path + str(i) + "/moisture", str(farm.moisture), qos = 1, retain=True)
+                client.publish(path + str(i) + "/temperature", str(farm.temperature), qos = 1, retain=True)
+                client.publish(path + str(i) + "/energy", str(farm.energy), qos = 1, retain=True)
             time.sleep(1000)
