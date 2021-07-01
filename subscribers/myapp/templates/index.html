@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+</head>
+<body>
+    <p class="title">IoT_HW4_MQTT | Mohammad Robati Shirzad | 9631028</p>
+    <div id="applications-container">
+        <a href="/farm">
+            <div class="application-item">
+                <img src="{% static 'imgs/farm.png' %}" width="100%" alt="">
+            </div>
+        </a>
+        <a href="/home">
+            <div class="application-item">
+                <img src="{% static 'imgs/home.png' %}" width="100%" alt="">
+            </div>
+        </a>
+        <a href="/hospital">
+            <div class="application-item">
+                <img src="{% static 'imgs/hospital.png' %}" width="100%" alt="">
+            </div>
+        </a>
+    </div>
+</body>
+</html>

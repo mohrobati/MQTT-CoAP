@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{application}}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/instances.css' %}">
+</head>
+<body>
+<p class="title">{{application}}</p>
+{% with "imgs/"|add:application|add:"_ins.png" as img %}
+<div class="container">
+    <div class="instances-container">
+        {% for i in range %}
+            <a href="/{{ application }}/{{ i }}">
+                <div class="instances-item">
+                    <img src="{% static img %}" width="100%" alt="">
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endwith %}
+</body>
+</html>

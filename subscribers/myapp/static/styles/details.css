@@ -1,0 +1,38 @@
+body {
+    height: 100vh;
+    padding-top: 100px;
+    background: linear-gradient(0deg, rgba(149,208,10,1) 0%, rgba(121,212,11,1) 48%, rgba(52,136,0,1) 100%);
+}
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+
+.title {
+    text-align: center;
+    color: #374f3d;
+    font-size: 2em;
+}
+
+.details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-item {
+    background-color: rgb(255, 255, 255, 0.4);
+    border-radius: 10%;
+    margin: 5px;
+    text-align: center;
+    font-size: 2em;
+    padding: 30px;
+
+}
+
+.details-item:hover {
+    background-color: rgb(255, 255, 255, 0.8);
+    cursor: pointer;
+}
