@@ -10,7 +10,7 @@ class Publisher:
     def _assignValues(self):
         pass
 
-    def _publish(self, path):
+    def _publishMQTT(self, path):
         def on_publish(client, userdata, mid):
             print("mid: " + str(mid))
         client = paho.Client()
@@ -20,4 +20,6 @@ class Publisher:
         return client
 
     def startPublishLoop(self, path):
-        self._publish(path)
+        self._publishMQTT(path)
+
+

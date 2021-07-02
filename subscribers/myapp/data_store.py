@@ -19,3 +19,8 @@ class Store:
         topic = values[0].replace(self.__initPath, "").split("/")
         self.__values[topic[0]][topic[1]][topic[2]] = values[1].decode()
 
+    def submitDict(self, values):
+        self.__values = values
+        print(self.__values)
+
+

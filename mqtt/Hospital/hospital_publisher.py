@@ -1,5 +1,5 @@
-from applications.Hospital.hospital_model import Hospital
-from applications.publisher import Publisher
+from mqtt.Hospital.hospital_model import Hospital
+from mqtt.publisher import Publisher
 import random
 import time
 
@@ -21,8 +21,8 @@ class HospitalPublisher(Publisher):
             hospitals.append(hospital)
         return hospitals
 
-    def _publish(self, path):
-        client = super()._publish(path)
+    def _publishMQTT(self, path):
+        client = super()._publishMQTT(path)
         while True:
             hospitals = self._assignValues()
             for i in range(len(hospitals)):

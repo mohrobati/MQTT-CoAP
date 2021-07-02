@@ -1,5 +1,5 @@
-from applications.Farm.farm_model import Farm
-from applications.publisher import Publisher
+from mqtt.Farm.farm_model import Farm
+from mqtt.publisher import Publisher
 import random
 import time
 
@@ -21,8 +21,8 @@ class FarmPublisher(Publisher):
             farms.append(farm)
         return farms
 
-    def _publish(self, path):
-        client = super()._publish(path)
+    def _publishMQTT(self, path):
+        client = super()._publishMQTT(path)
         while True:
             farms = self._assignValues()
             for i in range(len(farms)):

@@ -2,8 +2,11 @@ from django.shortcuts import render, HttpResponse
 from .subscriber import Subscriber
 import threading
 
-subscriber = Subscriber(['farm', 'home', 'hospital'], "IoT_9631028_MQTT/")
-threading.Thread(target=subscriber.runSubscriber).start()
+# subscriber = Subscriber(['farm', 'home', 'hospital'], "IoT_9631028_MQTT/")
+# threading.Thread(target=subscriber.runSubscriberMQTT).start()
+
+subscriber = Subscriber(['farm', 'home', 'hospital'], "IoT_9631028_CoAP/")
+threading.Thread(target=subscriber.runSubscriberCoAP, args=("0.0.0.0", 5684, )).start()
 
 
 def index(request):

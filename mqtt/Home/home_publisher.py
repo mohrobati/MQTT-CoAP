@@ -1,5 +1,5 @@
-from applications.Home.home_model import Home
-from applications.publisher import Publisher
+from mqtt.Home.home_model import Home
+from mqtt.publisher import Publisher
 import random
 import time
 
@@ -21,8 +21,8 @@ class HomePublisher(Publisher):
             homes.append(home)
         return homes
 
-    def _publish(self, path):
-        client = super()._publish(path)
+    def _publishMQTT(self, path):
+        client = super()._publishMQTT(path)
         while True:
             homes = self._assignValues()
             for i in range(len(homes)):
